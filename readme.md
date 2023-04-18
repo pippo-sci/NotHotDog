@@ -17,3 +17,5 @@ El sistema consta de:
 
 ### Creditos
 - Basado en la serie Silicon Valley con la aplicacion See Food.
+
+@Los piratas
