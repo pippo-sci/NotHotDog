@@ -2,7 +2,7 @@
 class development:
 
     def __init__(self):
-        pass
+        print('hola mundo')
 
     def load_data(self, path):
         pass

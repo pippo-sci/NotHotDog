@@ -21,7 +21,13 @@ class preprocess:
             self.dataset.loc[file_name_no_ext,'img']=[img]
     
     def set_dataframe(self, rootpath):
-        self.dataset = pd.read_csv(rootpath)
+
+        cases = os.listdir('Dataset\open-images-v7\\train\data')
+        cases = [i.split('.')[0] for i in cases]
+        classi = pd.read_csv('Dataset\open-images-v7\\train\labels\classifications.csv')
+        class_map = pd.read_csv('Dataset\open-images-v7\\train\metadata\classes.csv', names=['Labelname', 'label'])
+        df = classi[(classi.Confidence > 0) & classi.ImageID.isin(cases)].merge(class_map, how='left', left_on='LabelName', right_on='Labelname')
+        self.dataset = df.groupby('ImageID').label.unique()
 
     def process_one(self):
         pass
