@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content%}
-<h1> About us </h1>
+<main role="main" class="inner cover py-5">
+<div>
+  <h1 class="cover-heading mb-5">About Us</h1>
+    <div class="row">
+      <div class="col-lg-6">
+        <img class="rounded-circle" src="https://media.licdn.com/dms/image/C4D03AQEuC_NFdOBz_A/profile-displayphoto-shrink_400_400/0/1517622810134?e=1687996800&v=beta&t=z0Cw3PRfc1WrwL_padW1Q67_KgIeJk3T9hqTUIZRLRc" alt="Generic placeholder image" width="140" height="140">
+        <h2 class='py-2'>Felipe Ramos</h2>
+        <p>Enthusiastic Data Scientist specialised in Artificial Intelligence (AI) and Natural Language Processing (NLP). I focus on putting into production NLP, Computer Vision (CV) and Supervised Machine Learning (ML) models that deliver value to people and businesses. </p>
+        <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/felipe-ramos-datasc1/" role="button" target="_blank">Linkedin</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-6">
+        <img class="rounded-circle" src="https://media.licdn.com/dms/image/C4E03AQE8OjHiptNfZA/profile-displayphoto-shrink_400_400/0/1599578017569?e=1687996800&v=beta&t=cngmVtiPsxDk-Kt48pdvHiNKvIQmas7Zq2kK8dCFWXo" alt="Generic placeholder image" width="140" height="140">
+        <h2 class='py-2'>Eduardo Rossel</h2>
+        <p>Data Scientist & Senior Data Analyst at Southern Cross Analytics. Proud to be part of the team that helps companies achieve their true potential. I'm interested in project management, AI, data analysis, technology, and sustainability.</p>
+        <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/eduardorosselsalas/?locale=en_US" role="button" target="_blank">Linkedin</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div>
+    <h1 class="cover-heading my-5">The idea</h1>
+    <p> Based on the series Silicon Valley and the app See Food.
+    <iframe width="500" height="300" src="https://www.youtube.com/embed/6ViobQys1iQ" title="Silicon Valley S04E04 Jian Yang SEEFOOD PITCH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</main>
 {% endblock %}

@@ -10,3 +10,6 @@ def about(request):
 
 def dashboard(request):
   return render(request, 'dashboard.html', {}) 
+
+def footer(request):
+  return render(request, 'footer.html', {}) 
