@@ -61,6 +61,10 @@ body{
   background-color: aliceblue !important;
 }
 
+.dz-remove {
+  color: #000000;
+}
+
 .btn {
   background-color: #9a382d;
   color:#fff;
