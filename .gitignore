@@ -1,3 +1,4 @@
+.gitignore
 bbox_labels_600_hierarchy.json
 oidv6-class-descriptions.csv
 /Dataset
