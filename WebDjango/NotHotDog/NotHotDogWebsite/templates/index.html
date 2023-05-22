@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+<div role="main" class="pt-5 card mt-2 px-5">
+    <h1 class="cover-heading mb-5">Is it a Hotdog?</h1>
+    <p class="lead mb-5">Upload a photo and we'll tell you if there's a hotdog in it. <br> 
+      No cap!</p>
+    <p class="lead">
+    <form action="upload/"  method='POST' class="dropzone dz" id="my-awesome-dropzone">
+      {% csrf_token %}
+      <div class='fallback'>
+        <input name='file' type='file' multiple />
+      </div>
+    </form>
+    </p>
+  </div>
+{% endblock %}
+
+
+{% block extrascripts %}<script type="text/JavaScript" src="{%  static 'main.js' %}"></script>{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+<main role="main" class="pt-5 card mt-2 px-5">
+    <h1 class="cover-heading mb-5">Dashboard</h1>
+
+    <div class="card-deck d-flex justify-content-center">
+        <div class="card-mini mb-3 col-4 mx-3 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Accuracy: </h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"> {{ accuracy }} <small class="text-muted"> % </small></h1>
+          </div>
+        </div>
+  
+        <div class="card-mini mb-3 col-4 mx-3 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">AVG response time: </h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"> {{ average_response_time }} <small class="text-muted"> [s] </small></h1>
+          </div>
+        </div>
+
+        <div class="card-mini mb-3 col-4 mx-3 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Average Response Time: </h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"> {{ average_response_time }} <small class="text-muted"> [s] </small></h1>
+          </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
