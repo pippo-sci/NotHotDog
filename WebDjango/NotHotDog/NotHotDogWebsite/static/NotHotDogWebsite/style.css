@@ -47,6 +47,13 @@ body{
   min-height: 42em;
 }
 
+.card-mini {
+  background-color: #E9B670 !important;
+  opacity: 1;
+  max-height: 11em;
+  max-width: 11em;
+}
+
 .table {
   color:rgba(0, 0, 0, .4)
 }

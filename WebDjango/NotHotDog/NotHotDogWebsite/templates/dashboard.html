@@ -2,71 +2,37 @@
 {% load static %}
 
 {% block content%}
+
 <main role="main" class="pt-5 card mt-2 px-5">
     <h1 class="cover-heading mb-5">Dashboard</h1>
-    <div class="table-responsive">
-      <table class="table-sm table-bordered">
-        <thead class='thead-dark'>
-          <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-            <th>Header 4</th>
-            <th>Header 5</th>
-            <th>Header 6</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-            <td>Row 1, Cell 3</td>
-            <td>Row 1, Cell 4</td>
-            <td>Row 1, Cell 5</td>
-            <td>Row 1, Cell 6</td>
-          </tr>
-          <tr>
-            <td>Row 2, Cell 1</td>
-            <td>Row 2, Cell 2</td>
-            <td>Row 2, Cell 3</td>
-            <td>Row 2, Cell 4</td>
-            <td>Row 2, Cell 5</td>
-            <td>Row 2, Cell 6</td>
-          </tr>
-          <tr>
-            <td>Row 3, Cell 1</td>
-            <td>Row 3, Cell 2</td>
-            <td>Row 3, Cell 3</td>
-            <td>Row 3, Cell 4</td>
-            <td>Row 3, Cell 5</td>
-            <td>Row 3, Cell 6</td>
-          </tr>
-          <tr>
-            <td>Row 4, Cell 1</td>
-            <td>Row 4, Cell 2</td>
-            <td>Row 4, Cell 3</td>
-            <td>Row 4, Cell 4</td>
-            <td>Row 4, Cell 5</td>
-            <td>Row 4, Cell 6</td>
-          </tr>
-          <tr>
-            <td>Row 5, Cell 1</td>
-            <td>Row 5, Cell 2</td>
-            <td>Row 5, Cell 3</td>
-            <td>Row 5, Cell 4</td>
-            <td>Row 5, Cell 5</td>
-            <td>Row 5, Cell 6</td>
-          </tr>
-          <tr>
-            <td>Row 6, Cell 1</td>
-            <td>Row 6, Cell 2</td>
-            <td>Row 6, Cell 3</td>
-            <td>Row 6, Cell 4</td>
-            <td>Row 6, Cell 5</td>
-            <td>Row 6, Cell 6</td>
-          </tr>
-        </tbody>
-      </table>
+
+    <div class="card-deck d-flex justify-content-center">
+        <div class="card-mini mb-3 col-4 mx-3 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Accuracy: </h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"> {{ accuracy }} <small class="text-muted"> % </small></h1>
+          </div>
+        </div>
+  
+        <div class="card-mini mb-3 col-4 mx-3 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">AVG response time: </h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"> {{ average_response_time }} <small class="text-muted"> [s] </small></h1>
+          </div>
+        </div>
+
+        <div class="card-mini mb-3 col-4 mx-3 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Average Response Time: </h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"> {{ average_response_time }} <small class="text-muted"> [s] </small></h1>
+          </div>
+        </div>
     </div>
 </main>
 {% endblock %}
