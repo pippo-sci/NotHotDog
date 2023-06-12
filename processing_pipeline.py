@@ -76,17 +76,28 @@ class preprocess:
 
 
     def out_put(self, path):
-        #print(self.dataset.label.value_counts())
-        #self.dataset.to_csv('test.csv')
-        #self.dataset.to_pickle('test.pkl.gzip')
-        #self.dataset.to_hdf('test.h5', mode='w', key='df')
-
-        batch_size = 1000
+        #self.dataset['label'] = self.dataset.label.astype('string')
+        #self.dataset['img'] = self.dataset.img.to_numpy()
+        
+        batch_size = 500
         for i, df_chunk in self.dataset.groupby(np.arange(self.dataset.shape[0]) // batch_size):
-            df_chunk.to_hdf('df.h5','table', complib= 'blosc:lz4', mode='a')
+            df_chunk.to_hdf('df.h5',key ='table_%i'%i, complib= 'blosc:lz4', mode='a')
+            #df_chunk.to_hdf('df.h5',key ='table', complib= 'blosc:lz4', mode='a',format='table', append=True)
         
 
-        logging.info(f'Data output in: {path}test.csv')
+        logging.info(f'Data output in: {path}test.h5')
+
+    def rebuild_dataset(self, path='df.h5'):
+        i = 0
+        sr = []
+        while True:
+            try:
+                sr.append(pd.read_hdf(path,'table_%i'%i))
+                i += 1
+            except:
+                break
+
+        return pd.concat(sr)
 
 
 if __name__ == "__main__":
