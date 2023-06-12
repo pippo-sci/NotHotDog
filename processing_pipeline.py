@@ -11,6 +11,9 @@ class preprocess:
     def __init__(self):
         self.dataset = pd.DataFrame()
         self.img_name_list=[]
+
+    def get_dataset(self):
+        return self.dataset
     
     
     def set_dataframe(self, rootpath):
@@ -27,12 +30,13 @@ class preprocess:
         logging.info("Dataset labels finished")
 
 
-    def load_data_img(self, rootpath):
+    def load_data_img(self, rootpath, img_size = 600):
         logging.info(f'Loading Images from {rootpath} started...')
+
         for i, filename in enumerate(os.listdir(os.path.join(rootpath, 'data'))):
 
             img = cv2.imread(os.path.join(rootpath, f'data\{filename}'), cv2.IMREAD_GRAYSCALE)
-            img = cv2.resize(img, (600,600))
+            img = cv2.resize(img, (img_size,img_size))
             file_name_no_ext=filename.replace('.jpg','')
             self.img_name_list.append(file_name_no_ext)
             self.dataset.loc[file_name_no_ext,'img']=[img]
@@ -69,18 +73,18 @@ class preprocess:
         self.dataset = pd.concat([self.dataset, second_df])
         logging.info("Data Augmentation finished")
         
-        
+
 
     def out_put(self, path):
         #print(self.dataset.label.value_counts())
         #self.dataset.to_csv('test.csv')
         #self.dataset.to_pickle('test.pkl.gzip')
-        self.dataset.to_hdf('test.h5', mode='w', key='df')
-        try:
-            self.dataset.to_json('test.json')
-        except Exception as e:
-            logging.warning(e)
-            print('exception')
+        #self.dataset.to_hdf('test.h5', mode='w', key='df')
+
+        batch_size = 1000
+        for i, df_chunk in self.dataset.groupby(np.arange(self.dataset.shape[0]) // batch_size):
+            df_chunk.to_hdf('df.h5','table', complib= 'blosc:lz4', mode='a')
+        
 
         logging.info(f'Data output in: {path}test.csv')
 
