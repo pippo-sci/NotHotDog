@@ -30,12 +30,12 @@ class preprocess:
         logging.info("Dataset labels finished")
 
 
-    def load_data_img(self, rootpath, img_size = 250):
+    def load_data_img(self, rootpath, img_size = 600):
         logging.info(f'Loading Images from {rootpath} started...')
 
         for i, filename in enumerate(os.listdir(os.path.join(rootpath, 'data'))):
 
-            img = cv2.imread(os.path.join(rootpath, f'data/{filename}'))
+            img = cv2.imread(os.path.join(rootpath, f'data/{filename}'), cv2.IMREAD_GRAYSCALE)
             img = cv2.resize(img, (img_size,img_size))
             file_name_no_ext=filename.replace('.jpg','')
             self.img_name_list.append(file_name_no_ext)
