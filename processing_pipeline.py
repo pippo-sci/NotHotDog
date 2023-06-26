@@ -13,8 +13,7 @@ class preprocess:
         self.img_name_list=[]
 
     def get_dataset(self):
-        return self.dataset
-    
+        return self.dataset 
     
     def set_dataframe(self, rootpath):
         logging.info('Loading labels started...')
