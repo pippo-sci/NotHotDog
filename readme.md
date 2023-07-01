@@ -20,6 +20,7 @@ El sistema consta de:
 |Model|Preprocess|Accuracy|
 |--|--|--|
 |Transfer Learning. Resnet 50 + (8*8*2048 - flatten), (256 - relu), (2 - softmax)|Input (250,250,3), Optimizer ADAM lr = 0.001, 10 epoch |0.802 |
+|Stacked Model (LogReg, KNeighbors, DT)|Hog features, Canny edges, raw histograms|0.620|
 
 ### Creditos
 - Basado en la serie Silicon Valley con la aplicacion See Food.
