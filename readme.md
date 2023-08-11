@@ -1,19 +1,22 @@
 # Esto no es un completo
 
-Proyecto para implementar, monitorear y desplegar modelos de Machine Learning en produccion.
+Proyecto para implementar, monitorear y desplegar modelos de Machine Learning en producción.
 
 ## Objetivo 
-El objetivo del proyecto es desarrollar un modelo de Computer Vision que automaticamente realice una clasificacion binaria sobre imagenes.
+El objetivo del proyecto es desarrollar un modelo de Computer Vision que automáticamente realice una clasificación binaria sobre imagenes.
 
-La idea es desarrollar una pruebade concepto de un modelo relativamente sencillo pero estable, mantenible, escalable y eficiente utilizando un conjunto de tecnologias abiertas e infraestructura gratuita asi como las mejores practicas de Data, Desarrollo y Despliege continuo (DC/CD/CI)
+La idea es desarrollar una prueba de concepto de un modelo relativamente sencillo pero estable, mantenible, escalable y eficiente utilizando un conjunto de tecnologías abiertas e infraestructura gratuita así como las mejores prácticas de Data, Desarrollo y Despliege Continuo (DC/CD/CI)
 
 ## Arquitectura
 El sistema consta de:
 
 - un frontend donde los usuarios pueden enviar imagenes para ser procesadas
-- un backend de inferencia que corra el actual modelo en produccion
+- un backend de inferencia que corra el actual modelo en producción (API)
 - una pipeline para procesar datos
+- Feature Storage para guaradar las imagenes, modelos y funciones de procesamiento entre los procesos de entrnamiento y servicio
 - almacenamiento de las metricas de monitoreo en una base de datos
+
+![alt text](https://github.com/pippo-sci/NotHotDog/blob/BaseTransferLearning_CNN/Architecture.drawio.png?raw=true)
 
 ### Resultados experimentales:
 
@@ -25,10 +28,6 @@ El sistema consta de:
 |Decision Tree -Default|Color Histogram. bin size 32, RGB, normalized|0.87|
 |Random Forest -Default|Color Histogram. bin size 32, RGB, normalized|0.93|
 |Stacked RandomForest Linear SVM|Color Histogram. bin size 32, RGB, normalized|0.92|
-
-### Architectura
-
-![alt text](https://github.com/pippo-sci/NotHotDog/blob/BaseTransferLearning_CNN/Architecture.drawio.png?raw=true)
 
 
 ### Creditos
