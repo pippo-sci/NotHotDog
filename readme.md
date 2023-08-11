@@ -28,7 +28,7 @@ El sistema consta de:
 
 ### Architectura
 
-![alt text](https://github.com/pippo-sci/NotHotDog/blob/BaseTransferLearning_CNN/Architecture.png?raw=true)
+![alt text](https://github.com/pippo-sci/NotHotDog/blob/BaseTransferLearning_CNN/Architecture.drawio.png?raw=true)
 
 
 ### Creditos
