@@ -26,6 +26,10 @@ El sistema consta de:
 |Random Forest -Default|Color Histogram. bin size 32, RGB, normalized|0.93|
 |Stacked RandomForest Linear SVM|Color Histogram. bin size 32, RGB, normalized|0.92|
 
+### Architectura
+
+![alt text](https://github.com/pippo-sci/NotHotDog/blob/BaseTransferLearning_CNN/Architecture.png?raw=true)
+
 
 ### Creditos
 - Basado en la serie Silicon Valley con la aplicacion See Food.
